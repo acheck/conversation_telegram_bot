@@ -1,5 +1,5 @@
-import TelegramBotClient from 'node-telegram-bot-api'
-import StateMachine from 'javascript-state-machine'
+const TelegramBotClient = require('node-telegram-bot-api');
+const {StateMachine} = require('javascript-state-machine');
 
 function createFsm() {
   return StateMachine.create({
@@ -39,7 +39,7 @@ function eventFromStateAndMessageText(state, text) {
   }
 }
 
-export default class Bot {
+module.exports =  class Bot {
   constructor(token) {
     this.client = new TelegramBotClient(token, { polling: true })
   }
