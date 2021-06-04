@@ -7,6 +7,6 @@ var path = require('path')
 require('babel-polyfill')
 require('babel-register')
 
-var Bot = require('./src/bot').default
+const Bot = require('./src/bot')
 var bot = new Bot(process.env.BOT_TOKEN)
 bot.start()
